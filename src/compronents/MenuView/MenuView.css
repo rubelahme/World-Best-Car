@@ -1,0 +1,10 @@
+img {
+  width: 100%;
+  height: auto;
+}
+.view {
+  color: white;
+  padding: 10px;
+  background-color: yellowgreen;
+  border-radius: 10px;
+}

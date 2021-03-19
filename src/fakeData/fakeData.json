@@ -1,0 +1,4 @@
+[{"id":1,"name":"Ford","img":"https://i.ibb.co/XZLNbMX/fast.jpg","map_url":"https://map.positionstack.com/export/embed.html?bbox=-73.978004,40.756384,-73.979004,40.755384&layer=mapnik&marker=40.755884,-73.978504"},
+{"id":2,"name":"Chevrolet","img":"https://i.ibb.co/XpGqkn4/seond.jpg","map_url":"https://map.positionstack.com/export/embed.html?bbox=-73.978004,40.756384,-73.979004,40.755384&layer=mapnik&marker=40.755884,-73.978504"},
+{"id":3,"name":"Cadillac","img":"https://i.ibb.co/0DHQygX/three.jpg","map_url":"https://map.positionstack.com/export/embed.html?bbox=-73.978004,40.756384,-73.979004,40.755384&layer=mapnik&marker=40.755884,-73.978504"},
+{"id":4,"name":"Dodge","img":"https://i.ibb.co/PjxLm4Z/four.jpg","map_url":"https://map.positionstack.com/export/embed.html?bbox=-73.978004,40.756384,-73.979004,40.755384&layer=mapnik&marker=40.755884,-73.978504"}]

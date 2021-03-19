@@ -1,0 +1,18 @@
+.input {
+  width: 300px;
+  background-color: gray;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5px;
+}
+.input input {
+  width: 250px;
+  margin: 10px;
+}
+.button {
+  width: 250px;
+  height: 35px;
+  margin-top: 5px;
+  background-color: seagreen;
+  border: none;
+}
