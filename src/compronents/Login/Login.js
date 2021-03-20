@@ -15,14 +15,13 @@ const Login = () => {
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
+
   const handleGoogle = () => {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
       .signInWithPopup(providerGoogle)
       .then((result) => {
-        var credential = result.credential;
-        var token = credential.accessToken;
         var user = result.user;
         setStart(user);
         history.replace(from);
@@ -32,44 +31,84 @@ const Login = () => {
       });
   };
 
-  ////email
-  const handleInput = (e) => {
-    let login;
+  const handleFacebook = () => {
+    var providerFacebook = new firebase.auth.FacebookAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(providerFacebook)
+      .then((result) => {
+        var user = result.user;
+        setStart(user);
+        history.replace(from);
+      })
+      .catch((error) => {
+        var errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+
+  const handelInput = (e) => {
+    let formValid = true;
     if (e.target.name === "email") {
-      const newEmail = /\S+@\S+\.\S+/.test(e.target.value);
+      formValid = /\S+@\S+\.\S+/.test(e.target.value);
     }
     if (e.target.name === "password") {
+      const isPassword = e.target.value.length > 6;
+      const passwordConform = /\d{1}/.test(e.target.value);
+      formValid = isPassword && passwordConform;
+    }
+    if (formValid) {
+      const newUserInfo = { ...start };
+      newUserInfo[e.target.name] = e.target.value;
+      setStart(newUserInfo);
     }
   };
 
+  const handleSubmit = (e) => {
+    if (start.email && start.password) {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(start.email, start.password)
+        .then((userCredential) => {
+          var user = userCredential.user;
+          setStart(user);
+          history.replace(from);
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
+    }
+    e.preventDefault();
+  };
   return (
     <div className="text-center mt-5">
-      <div className="input">
-        <form action="">
-          <br />
-          <input
-            onBlur={handleInput}
-            type="email"
-            name="email"
-            id=""
-            placeholder="your email"
-            required
-          />
-          <br />
-          <input
-            placeholder="your password"
-            type="password"
-            name="password"
-            id=""
-            required
-          />
-          <br />
-          <input type="submit" className="bg-danger" value="Login" />
-        </form>
+      <form className="input-from bg-success" onSubmit={handleSubmit}>
+        <input
+          name="email"
+          onBlur={handelInput}
+          placeholder="Your Email"
+          required
+        />
+        <label htmlFor="">Must give a Number</label>
+        <input
+          name="password"
+          onBlur={handelInput}
+          placeholder="password"
+          required
+        />
+
+        <input className="bg-warning" type="submit" value=" Login" />
+      </form>
+      <div>
+        <button className="handelButton" onClick={handleGoogle}>
+          Google Sing In
+        </button>
       </div>
       <div>
-        <button className="button" onClick={handleGoogle}>
-          Facebook Sing in
+        <button className="handelButton" onClick={handleFacebook}>
+          Facebook Sing In
         </button>
       </div>
     </div>

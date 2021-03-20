@@ -7,8 +7,9 @@ import Details from "./compronents/Details/Details";
 import ItemDetails from "./compronents/ItemDetails/ItemDetails";
 import PrivateRoute from "./compronents/PrivateRoute/PrivateRoute";
 import Login from "./compronents/Login/Login";
+import NoFound from "./compronents/NoFound/NoFound";
 
-export const privacyWeb = createContext();
+export const privacyWeb = createContext([]);
 
 function App() {
   const [start, setStart] = useState([]);
@@ -35,10 +36,13 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <PrivateRoute path="/item/:id">
+          <PrivateRoute path="/item/:menu">
             <Header></Header>
             <Details></Details>
           </PrivateRoute>
+          <Route path="*">
+            <NoFound></NoFound>
+          </Route>
         </Switch>
       </Router>
     </privacyWeb.Provider>

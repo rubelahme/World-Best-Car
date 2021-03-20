@@ -1,10 +1,13 @@
 import "./Details.css";
-import images from "../../images/Map.png";
 import { useParams } from "react-router";
-import fakeData from "../../fakeData/fakeData.json";
-const Details = () => {
-  const { id } = useParams();
-  const data = fakeData.find((pd) => pd.id === id);
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { useContext } from "react";
+import { privacyWeb } from "../../App";
+
+const Details = (props) => {
+  const { menu } = useParams();
+  const [start, setStart] = useContext(privacyWeb);
+  console.log(start);
   return (
     <div>
       <div className="row">
@@ -25,13 +28,20 @@ const Details = () => {
               <input className="search" type="submit" value="Search" />
             </form>
           </div>
+
+          {start.id === "menu" && <img src={start.img} alt="" />}
         </div>
         <div className="col-md-8">
-          <img className="bigImg" src={images} alt="" />
+          <Map google={props.google} zoom={14}>
+            <Marker onClick={props.onMarkerClick} name={"Current location"} />
+            <InfoWindow onClose={props.onInfoWindowClose}></InfoWindow>
+          </Map>
         </div>
       </div>
     </div>
   );
 };
 
-export default Details;
+export default GoogleApiWrapper((props) => ({
+  apiKey: "AIzaSyD_pEXmvD1bTH6P4iYbWnn78BcEW-0W9Xs",
+}))(Details);

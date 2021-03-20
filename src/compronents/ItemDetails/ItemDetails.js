@@ -1,13 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
-import fakeData from "../../fakeData/fakeData.json";
+import { privacyWeb } from "../../App";
+import fakeData from "../../fakeData/fakeData";
 import Background from "../../images/all.jpg";
 import MenuView from "../MenuView/MenuView";
 const ItemDetails = () => {
-  const [user, setUser] = useState([]);
+  const [start, setStart] = useContext(privacyWeb);
   useEffect(() => {
-    setUser(fakeData);
+    setStart(fakeData);
   }, []);
   var sectionStyle = {
     width: "100%",
@@ -19,7 +20,7 @@ const ItemDetails = () => {
   return (
     <div style={sectionStyle}>
       <div className="row">
-        {user.map((data) => (
+        {start.map((data) => (
           <div className="col-md-3 text-center p-5">
             <MenuView Data={data}></MenuView>
           </div>
