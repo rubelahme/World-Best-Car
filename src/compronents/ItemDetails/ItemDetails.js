@@ -7,8 +7,9 @@ import MenuView from "../MenuView/MenuView";
 const ItemDetails = () => {
   const [time, setTime] = useState([]);
   useEffect(() => {
-    setTime(fakeData);
-  }, [fakeData]);
+    const times = fakeData;
+    setTime(times);
+  }, [time]);
   var sectionStyle = {
     width: "100%",
     backgroundImage: `url(${Background})`,
