@@ -3,11 +3,12 @@ import { useEffect } from "react";
 import fakeData from "../../fakeData/fakeData";
 import Background from "../../images/all.jpg";
 import MenuView from "../MenuView/MenuView";
+
 const ItemDetails = () => {
   const [time, setTime] = useState([]);
   useEffect(() => {
     setTime(fakeData);
-  }, 0);
+  }, [fakeData]);
   var sectionStyle = {
     width: "100%",
     backgroundImage: `url(${Background})`,
