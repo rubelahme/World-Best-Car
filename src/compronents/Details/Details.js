@@ -1,12 +1,10 @@
 import "./Details.css";
-import { useParams } from "react-router";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { useContext } from "react";
 import { privacyWeb } from "../../App";
 
 const Details = (props) => {
-  const { menu } = useParams();
-  const [start, setStart] = useContext(privacyWeb);
+  const [start] = useContext(privacyWeb);
   console.log(start);
   return (
     <div>

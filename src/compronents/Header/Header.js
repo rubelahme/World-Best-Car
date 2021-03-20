@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { privacyWeb } from "../../App";
 const Header = () => {
-  const [start, setStart] = useContext(privacyWeb);
+  const [start] = useContext(privacyWeb);
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-warning">

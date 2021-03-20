@@ -4,7 +4,7 @@ import { Redirect, Route } from "react-router";
 import { privacyWeb } from "../../App";
 
 const PrivateRoute = ({ children, ...rest }) => {
-  const [start, setStart] = useContext(privacyWeb);
+  const [start] = useContext(privacyWeb);
   return (
     <div>
       <Route
