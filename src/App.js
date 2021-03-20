@@ -8,6 +8,7 @@ import ItemDetails from "./compronents/ItemDetails/ItemDetails";
 import PrivateRoute from "./compronents/PrivateRoute/PrivateRoute";
 import Login from "./compronents/Login/Login";
 import NoFound from "./compronents/NoFound/NoFound";
+import HomeDetails from "./compronents/HomeDetails/HomeDetails";
 
 export const privacyWeb = createContext([]);
 
@@ -27,11 +28,11 @@ function App() {
           </Route>
           <PrivateRoute path="/details">
             <Header></Header>
-            <Details></Details>
+            <HomeDetails></HomeDetails>
           </PrivateRoute>
           <PrivateRoute path="/singIn">
             <Header></Header>
-            <Details></Details>
+            <HomeDetails></HomeDetails>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
