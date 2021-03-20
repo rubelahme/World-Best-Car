@@ -14,23 +14,25 @@ const Details = (props) => {
     <div>
       <div className="row">
         <div className="col-md-4">
-          <div className="menuForm">
-            <form action="">
-              <label htmlFor="">Pick From</label>
-              <br />
-              <input type="text" placeholder="Dhaka" />
-              <br />
-              <label htmlFor="">Pick To</label>
-              <br />
-              <input type="text" placeholder="Tangail" />
-              <br />
-              <br />
-              <input type="date" name="" id="" />
-              <br />
-              <input className="search" type="submit" value="Search" />
-            </form>
+          <div className="spaces">
+            <div className="menuForm">
+              <form action="">
+                <label htmlFor="">Pick From</label>
+                <br />
+                <input type="text" placeholder="Dhaka" />
+                <br />
+                <label htmlFor="">Pick To</label>
+                <br />
+                <input type="text" placeholder="Tangail" />
+                <br />
+                <br />
+                <input type="date" name="" id="" />
+                <br />
+                <input className="search" type="submit" value="Search" />
+              </form>
+            </div>
+            <SmailDetails data={deploy}></SmailDetails>
           </div>
-          <SmailDetails data={deploy}></SmailDetails>
         </div>
         <div className="col-md-8">
           <Map google={props.google} zoom={14}>

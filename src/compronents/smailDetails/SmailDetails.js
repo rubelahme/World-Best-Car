@@ -12,7 +12,7 @@ const SmailDetails = (props) => {
   console.log(user);
   return (
     <div className="size">
-      <div className="text-center address bg-warning p-3">
+      <div className="text-center address p-3">
         <h4>Dhaka</h4>
         <h4>Tangail</h4>
       </div>

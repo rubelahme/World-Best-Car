@@ -7,7 +7,7 @@ const Team = (props) => {
   return (
     <div className="team">
       <img src={img} alt="" />
-      <span>Id{id}</span>
+      <span>{id}=id</span>
       <span>${last_name}</span>
     </div>
   );

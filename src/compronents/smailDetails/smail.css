@@ -1,8 +1,9 @@
 .size {
-  margin-top: 20px;
+  margin: 20px;
 }
 .address {
   border: 1px solid yellowgreen;
   border-radius: 5px;
-  color: antiquewhite;
+  color: black;
+  background-color: rgba(153, 205, 50, 0.897);
 }
