@@ -7,7 +7,7 @@ import SmailDetails from "../smailDetails/SmailDetails";
 
 const Details = (props) => {
   const { menu } = useParams();
-  const [like, setLike] = useState(fakeData);
+  const [like] = useState(fakeData);
   const deploy = like.filter((pd) => pd.id === parseInt(menu));
   console.log(deploy);
   return (
