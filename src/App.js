@@ -32,7 +32,7 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/singIn">
             <Header></Header>
-            <HomeDetails></HomeDetails>
+            <Details></Details>
           </PrivateRoute>
           <Route path="/login">
             <Login></Login>
