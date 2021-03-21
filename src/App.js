@@ -13,7 +13,11 @@ import HomeDetails from "./compronents/HomeDetails/HomeDetails";
 export const privacyWeb = createContext([]);
 
 function App() {
-  const [start, setStart] = useState([]);
+  const [start, setStart] = useState({
+    displayName: "",
+    email: "",
+    password: "",
+  });
   return (
     <privacyWeb.Provider value={[start, setStart]}>
       <Router>

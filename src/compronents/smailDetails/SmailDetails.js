@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./smail.css";
 import simpleData from "../../fakeData/simpleData.json";
-import Team from "../Team/Team";
+import Team from "../saidItem/Team";
 const SmailDetails = (props) => {
   const { img } = props.data[0];
   const [user, setUser] = useState([]);
